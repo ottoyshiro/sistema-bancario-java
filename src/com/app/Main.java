@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
+        Manager man = new Manager();
         int escolha;
         
         do {
@@ -20,6 +21,8 @@ public class Main {
             switch(escolha) {
                 case 1:
                     System.out.println("============= Criar Conta =============");
+                    ContaCorrente cc = (ContaCorrente) man.criarConta();
+                    cc.calculaTributos();
                     break;
                 case 2:
                     System.out.println("========== Realizar Depósito ==========");
@@ -44,15 +47,7 @@ public class Main {
                     break;
             }
         } while(escolha != 7);
-        
-        ContaCorrente cc = new ContaCorrente("Otto", 200);
-        ContaCorrente cp = new ContaCorrente("Rian", 200);
-        cc.transferir();
-        cc.sacar();
-        cc.depositar();
-        cc.depositar();
-        
-        cp.sacar();
+        sc.close();
         
     }
     

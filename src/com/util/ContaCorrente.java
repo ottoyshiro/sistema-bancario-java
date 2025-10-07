@@ -34,5 +34,6 @@ public class ContaCorrente extends Conta implements ITributavel {
     @Override
     public void calculaTributos() {
         double tributos = this.getSaldo()/100;
+        System.out.println(tributos);
     }
 }
